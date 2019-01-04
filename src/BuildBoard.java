@@ -23,5 +23,6 @@ public class BuildBoard {
         }
         Print print = new Print();
         print.print(matrix);
+        System.out.print("abc");
     }
 }
