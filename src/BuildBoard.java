@@ -3,26 +3,17 @@
 public class BuildBoard {
 
     public void build(int[][] matrix) {
-        int[] row = new int[9];
-        int[] col = new int[9];
-        int[] val = new int[9];
-        int k = 0;
-        int j = 0;
-        for(int i = 0; i < 9; i++) {
-            row[i] = (int)(Math.random()*10);
-            col[i] = (int)(Math.random()*10);
-            val[i] = (int)(Math.random()*10);
-        }
-
-        for(int i = 0; i < 9; i++) {
-            if(row[k] == i) {
-                while(j != col[k]) {
-
-                }
+        Validation validation = new Validation();
+        int a = 30;
+        for(int i = 1; i <= a; i++) {
+            int b = (int)(Math.random()*9);
+            int c = (int)(Math.random()*9);
+            int v = (int)(Math.random()*8) + 1;
+            if (validation.validateRowCol(matrix,b,c,v) && validation.validateSubMatrix(matrix,b,c,v)) {
+                matrix[b][c] = v;
             }
         }
         Print print = new Print();
         print.print(matrix);
-        System.out.print("abc");
     }
 }
